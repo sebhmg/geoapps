@@ -4,27 +4,27 @@ channels:
   - conda-forge
 dependencies:
   - python>=3.7
-  - pip
-  - git
-  - discretize
-  - numpy
-  - scipy
-  - matplotlib
-  - ipywidgets
-  - ipykernel
-  - scikit-image
-  - scikit-learn
-  - zarr
-  - fsspec
-  - xarray
   - dask
-  - gdal
+  - discretize
+  - empymod
   - fiona
+  - fsspec
+  - gdal
   - h5py
+  - ipyfilechooser
+  - ipykernel
+  - ipywidgets
+  - matplotlib
+  - numpy
   - plotly
   - requests
-  - empymod
-  - ipyfilechooser
+  - scikit-image
+  - scikit-learn
+  - scipy
+  - xarray
+  - zarr
+  - git
+  - pip
   - pip:
     - git+https://github.com/MiraGeoscience/simpeg.git@feature/tiled-simulations
     - geoh5py==0.1.2
