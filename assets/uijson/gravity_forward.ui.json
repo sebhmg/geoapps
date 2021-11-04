@@ -26,12 +26,11 @@
         ],
         "group": "Topography",
         "main": true,
-        "isValue": true,
+        "isValue": false,
         "label": "Elevation",
         "parent": "topography_object",
         "property": "",
-        "value": 0.0,
-        "enabled": true
+        "value": 0.0
     },
     "data_object": {
         "main": true,
