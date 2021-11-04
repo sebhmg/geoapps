@@ -1,8 +1,29 @@
 {
-    "title": "SimPEG Gravity Forward",
-    "inversion_type": "gravity",
+    "title": "SimPEG Magnetic Susceptibility Forward",
+    "inversion_type": "magnetic scalar",
     "geoh5": "",
     "forward_only": true,
+    "inducing_field_strength": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Strength",
+        "value": 50000.0
+    },
+    "inducing_field_inclination": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Inclination",
+        "value": 90.0
+    },
+    "inducing_field_declination": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Declination",
+        "value": 0.0
+    },
     "topography_object": {
         "main": true,
         "group": "Topography",
@@ -43,64 +64,64 @@
         ],
         "value": ""
     },
-    "gz_channel_bool": {
+    "tmi_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gz",
+        "label": "Use TMI",
         "value": false
     },
-    "guv_channel_bool": {
+    "bxx_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Guv",
+        "label": "Use Bxx",
         "value": false
     },
-    "gxy_channel_bool": {
+    "bxy_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxy (Gne)",
+        "label": "Use Bxy",
         "value": false
     },
-    "gxx_channel_bool": {
+    "bxz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxx",
+        "label": "Use Bxz",
         "value": false
     },
-    "gyy_channel_bool": {
+    "byy_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gyy",
+        "label": "Use Byy",
         "value": false
     },
-    "gzz_channel_bool": {
+    "byz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gzz",
+        "label": "Use Byz",
         "value": false
     },
-    "gxz_channel_bool": {
+    "bzz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxz",
+        "label": "Use Bzz",
         "value": false
     },
-    "gyz_channel_bool": {
+    "bx_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gyz",
+        "label": "Use Bx",
         "value": false
     },
-    "gx_channel_bool": {
+    "by_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gx",
+        "label": "Use By",
         "value": false
     },
-    "gy_channel_bool": {
+    "bz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gy",
+        "label": "Use Bz",
         "value": false
     },
     "starting_model_object": {
@@ -127,7 +148,7 @@
         "main": true,
         "isValue": false,
         "parent": "starting_model_object",
-        "label": "Density (g/cc)",
+        "label": "Susceptibility (SI)",
         "property": "",
         "value": 0.0
     },
@@ -384,14 +405,14 @@
     },
     "out_group": {
         "label": "Results group name",
-        "value": "GravityForward"
+        "value": "MagneticScalarForward"
     },
     "monitoring_directory": {
         "default": "",
         "enabled": false,
         "value": ""
     },
-    "run_command": "geoapps.drivers.grav_inversion",
+    "run_command": "geoapps.drivers.magnetic_scalar_inversion",
     "run_command_boolean": {
         "default": false,
         "value": false,
@@ -399,5 +420,6 @@
         "tooltip": "Warning: launches process to run python model on save",
         "main": true
     },
-    "conda_environment": "geoapps"
+    "conda_environment": "geoapps",
+    "distributed_workers": ""
 }
