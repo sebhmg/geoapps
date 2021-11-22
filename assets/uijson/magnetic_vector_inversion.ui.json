@@ -1,8 +1,29 @@
 {
-    "title": "SimPEG Gravity Inversion",
-    "inversion_type": "gravity",
+    "title": "SimPEG Magnetic Vector Inversion",
+    "inversion_type": "magnetic vector",
     "geoh5": "",
     "forward_only": false,
+    "inducing_field_strength": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Strength",
+        "value": 50000.0
+    },
+    "inducing_field_inclination": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Inclination",
+        "value": 90.0
+    },
+    "inducing_field_declination": {
+        "min": 0.0,
+        "main": true,
+        "group": "Inducing Field",
+        "label": "Declination",
+        "value": 0.0
+    },
     "topography_object": {
         "main": true,
         "group": "Topography",
@@ -43,13 +64,13 @@
         ],
         "value": ""
     },
-    "gz_channel_bool": {
+    "tmi_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gz",
+        "label": "Use TMI",
         "value": false
     },
-    "gz_channel": {
+    "tmi_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -57,13 +78,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gz channel",
+        "label": "TMI channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gz_uncertainty": {
+    "tmi_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -72,20 +93,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gz uncertainty (mGal)",
+        "label": "TMI uncertainty",
         "parent": "data_object",
-        "dependency": "gz_channel",
+        "dependency": "tmi_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "guv_channel_bool": {
+    "bxx_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Guv",
+        "label": "Use Bxx",
         "value": false
     },
-    "guv_channel": {
+    "bxx_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -93,13 +114,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Guv channel",
+        "label": "Bxx channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "guv_uncertainty": {
+    "bxx_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -108,20 +129,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Guv uncertainty (mGal)",
+        "label": "Bxx uncertainty",
         "parent": "data_object",
-        "dependency": "guv_channel",
+        "dependency": "bxx_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gxy_channel_bool": {
+    "bxy_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxy (Gne)",
+        "label": "Use Bxy",
         "value": false
     },
-    "gxy_channel": {
+    "bxy_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -129,13 +150,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gxy (Gne) channel",
+        "label": "Bxy channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gxy_uncertainty": {
+    "bxy_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -144,20 +165,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gxy (Gne) uncertainty (mGal)",
+        "label": "Bxy uncertainty",
         "parent": "data_object",
-        "dependency": "gxy_channel",
+        "dependency": "bxy_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gxx_channel_bool": {
+    "bxz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxx",
+        "label": "Use Bxz",
         "value": false
     },
-    "gxx_channel": {
+    "bxz_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -165,13 +186,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gxx channel",
+        "label": "Bxz channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gxx_uncertainty": {
+    "bxz_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -180,20 +201,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gxx uncertainty (mGal)",
+        "label": "Bxz uncertainty",
         "parent": "data_object",
-        "dependency": "gxx_channel",
+        "dependency": "bxz_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gyy_channel_bool": {
+    "byy_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gyy",
+        "label": "Use Byy",
         "value": false
     },
-    "gyy_channel": {
+    "byy_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -201,13 +222,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gyy channel",
+        "label": "Byy channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gyy_uncertainty": {
+    "byy_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -216,20 +237,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gyy uncertainty (mGal)",
+        "label": "Byy uncertainty",
         "parent": "data_object",
-        "dependency": "gyy_channel",
+        "dependency": "byy_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gzz_channel_bool": {
+    "byz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gzz",
+        "label": "Use Byz",
         "value": false
     },
-    "gzz_channel": {
+    "byz_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -237,13 +258,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gzz channel",
+        "label": "Byz channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gzz_uncertainty": {
+    "byz_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -252,20 +273,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gzz uncertainty (mGal)",
+        "label": "Byz uncertainty",
         "parent": "data_object",
-        "dependency": "gzz_channel",
+        "dependency": "byz_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gxz_channel_bool": {
+    "bzz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gxz",
+        "label": "Use Bzz",
         "value": false
     },
-    "gxz_channel": {
+    "bzz_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -273,13 +294,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gxz channel",
+        "label": "Bzz channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gxz_uncertainty": {
+    "bzz_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -288,20 +309,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gxz uncertainty (mGal)",
+        "label": "Bzz uncertainty",
         "parent": "data_object",
-        "dependency": "gxz_channel",
+        "dependency": "bzz_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gyz_channel_bool": {
+    "bx_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gyz",
+        "label": "Use Bx",
         "value": false
     },
-    "gyz_channel": {
+    "bx_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -309,13 +330,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gyz channel",
+        "label": "Bx channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gyz_uncertainty": {
+    "bx_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -324,20 +345,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gyz uncertainty (mGal)",
+        "label": "Bx uncertainty",
         "parent": "data_object",
-        "dependency": "gyz_channel",
+        "dependency": "bx_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gx_channel_bool": {
+    "by_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gx",
+        "label": "Use By",
         "value": false
     },
-    "gx_channel": {
+    "by_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -345,13 +366,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gx channel",
+        "label": "By channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gx_uncertainty": {
+    "by_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -360,20 +381,20 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gx uncertainty (mGal)",
+        "label": "By uncertainty",
         "parent": "data_object",
-        "dependency": "gx_channel",
+        "dependency": "by_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
     },
-    "gy_channel_bool": {
+    "bz_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Gy",
+        "label": "Use Bz",
         "value": false
     },
-    "gy_channel": {
+    "bz_channel": {
         "association": [
             "Cell",
             "Vertex"
@@ -381,13 +402,13 @@
         "dataType": "Float",
         "group": "Data",
         "main": true,
-        "label": "Gy channel",
+        "label": "Bz channel",
         "parent": "data_object",
         "optional": true,
         "enabled": false,
         "value": ""
     },
-    "gy_uncertainty": {
+    "bz_uncertainty": {
         "association": [
             "Cell",
             "Vertex"
@@ -396,9 +417,9 @@
         "group": "Data",
         "main": true,
         "isValue": true,
-        "label": "Gy uncertainty (mGal)",
+        "label": "Bz uncertainty",
         "parent": "data_object",
-        "dependency": "gy_channel",
+        "dependency": "bz_channel",
         "dependencyType": "enabled",
         "property": "",
         "value": 1.0
@@ -417,6 +438,34 @@
         "label": "Object",
         "value": ""
     },
+    "starting_inclination_object": {
+        "group": "Starting Model",
+        "main": true,
+        "meshType": [
+            "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
+            "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
+            "{F26FEBA3-ADED-494B-B9E9-B2BBCBE298E1}",
+            "{48F5054A-1C5C-4CA4-9048-80F36DC60A06}",
+            "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
+            "{4ea87376-3ece-438b-bf12-3479733ded46}"
+        ],
+        "label": "Starting inclination object",
+        "value": ""
+    },
+    "starting_declination_object": {
+        "group": "Starting Model",
+        "main": true,
+        "meshType": [
+            "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
+            "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
+            "{F26FEBA3-ADED-494B-B9E9-B2BBCBE298E1}",
+            "{48F5054A-1C5C-4CA4-9048-80F36DC60A06}",
+            "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
+            "{4ea87376-3ece-438b-bf12-3479733ded46}"
+        ],
+        "label": "Starting declination object",
+        "value": ""
+    },
     "starting_model": {
         "association": [
             "Cell",
@@ -427,7 +476,39 @@
         "main": true,
         "isValue": false,
         "parent": "starting_model_object",
-        "label": "Density (g/cc)",
+        "label": "Susceptibility (SI)",
+        "property": "",
+        "value": 0.0
+    },
+    "starting_inclination": {
+        "association": [
+            "Cell",
+            "Vertex"
+        ],
+        "dataType": "Float",
+        "group": "Starting Model",
+        "main": true,
+        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "parent": "starting_inclination_object",
+        "label": "Inclination (degree from North)",
+        "property": "",
+        "value": 0.0
+    },
+    "starting_declination": {
+        "association": [
+            "Cell",
+            "Vertex"
+        ],
+        "dataType": "Float",
+        "group": "Starting Model",
+        "main": true,
+        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "parent": "starting_declination_object",
+        "label": "Declination (degree from horizontal)",
         "property": "",
         "value": 0.0
     },
@@ -510,7 +591,7 @@
     "detrend_type": {
         "choiceList": [
             "all",
-            "perimeter"
+            "corners"
         ],
         "group": "Data pre-processing",
         "dependency": "detrend_order",
@@ -771,7 +852,7 @@
         "dependency": "initial_beta",
         "dependencyType": "disabled",
         "label": "Initial beta ratio",
-        "value": 10.0
+        "value": 100.0
     },
     "initial_beta": {
         "min": 0.0,
@@ -877,6 +958,62 @@
         "property": "",
         "value": 0.0
     },
+    "reference_inclination_object": {
+        "group": "Regularization",
+        "label": "Reference inclination object",
+        "meshType": [
+            "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
+            "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
+            "{F26FEBA3-ADED-494B-B9E9-B2BBCBE298E1}",
+            "{48F5054A-1C5C-4CA4-9048-80F36DC60A06}",
+            "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
+            "{4ea87376-3ece-438b-bf12-3479733ded46}"
+        ],
+        "value": ""
+    },
+    "reference_declination_object": {
+        "group": "Regularization",
+        "label": "Reference declination object",
+        "meshType": [
+            "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
+            "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
+            "{F26FEBA3-ADED-494B-B9E9-B2BBCBE298E1}",
+            "{48F5054A-1C5C-4CA4-9048-80F36DC60A06}",
+            "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
+            "{4ea87376-3ece-438b-bf12-3479733ded46}"
+        ],
+        "value": ""
+    },
+    "reference_inclination": {
+        "association": [
+            "Cell",
+            "Vertex"
+        ],
+        "dataType": "Float",
+        "group": "Regularization",
+        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "label": "Reference inclination value",
+        "parent": "reference_inclination_object",
+        "property": "",
+        "value": 0.0
+    },
+    "reference_declination": {
+        "association": [
+            "Cell",
+            "Vertex"
+        ],
+        "dataType": "Float",
+        "group": "Regularization",
+        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "label": "Reference declination value",
+        "parent": "reference_declination_object",
+        "property": "",
+        "value": 0.0
+    },
     "gradient_type": {
         "choiceList": [
             "total",
@@ -972,7 +1109,7 @@
     },
     "out_group": {
         "label": "Results group name",
-        "value": "GravityInversion"
+        "value": "VectorInversion"
     },
     "no_data_value": {
         "default": 0,
@@ -988,12 +1125,13 @@
         "enabled": false,
         "value": ""
     },
-    "run_command": "geoapps.drivers.grav_inversion",
+    "run_command": "geoapps.drivers.magnetic_vector_inversion",
     "run_command_boolean": {
         "value": false,
         "label": "Run python module ",
         "tooltip": "Warning: launches process to run python model on save",
         "main": true
     },
-    "conda_environment": "geoapps"
+    "conda_environment": "geoapps",
+    "distributed_workers": ""
 }
