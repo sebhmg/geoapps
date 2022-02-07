@@ -893,7 +893,6 @@
         "label": "Number of cpu",
         "value": 1
     },
-    "workspace": "",
     "max_ram": "",
     "out_group": {
         "label": "Results group name",
