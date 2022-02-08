@@ -374,7 +374,6 @@
         "label": "Number of cpu",
         "value": 1
     },
-    "workspace": "",
     "out_group": {
         "label": "Results group name",
         "value": "MagneticScalarForward"

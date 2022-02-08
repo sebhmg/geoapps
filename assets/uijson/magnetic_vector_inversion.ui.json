@@ -414,11 +414,11 @@
         "dataType": "Float",
         "group": "Starting Model",
         "main": true,
-        "isValue": false,
+        "isValue": true,
         "parent": "starting_model_object",
         "label": "Susceptibility (SI)",
         "property": "",
-        "value": 0.0
+        "value": 0.0001
     },
     "starting_inclination": {
         "association": [
@@ -602,7 +602,7 @@
         "dependency": "mesh",
         "dependencyType": "disabled",
         "label": "Octree levels topography",
-        "value": "16, 8, 4, 2"
+        "value": "0, 0, 4, 4"
     },
     "octree_levels_obs": {
         "group": "Mesh",
@@ -1031,7 +1031,6 @@
         "value": 1
     },
     "max_ram": "",
-    "workspace": "",
     "out_group": {
         "label": "Results group name",
         "value": "VectorInversion"
