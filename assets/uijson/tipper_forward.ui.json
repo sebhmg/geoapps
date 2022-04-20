@@ -33,7 +33,7 @@
         "main": true,
         "group": "Data",
         "label": "Object",
-        "meshType": "{b99bd6e5-4fe1-45a5-bd2f-75fc31f91b38}",
+        "meshType": "{0b639533-f35b-44d8-92a8-f70ecff3fd26}",
         "value": ""
     },
     "txz_real_channel_bool": {
@@ -88,7 +88,7 @@
         "parent": "starting_model_object",
         "label": "Conductivity (Siemens/m)",
         "property": "",
-        "value": 0.0
+        "value": 0.001
     },
     "background_conductivity": {
         "association": [
@@ -102,7 +102,7 @@
         "parent": "starting_model_object",
         "label": "Background conductivity (Siemens/m)",
         "property": "",
-        "value": 1e-05
+        "value": 0.001
     },
     "tile_spatial": {
         "group": "Receivers location options",
