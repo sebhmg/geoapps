@@ -1,6 +1,6 @@
 {
-    "title": "SimPEG Magnetotellurics Forward",
-    "inversion_type": "magnetotellurics",
+    "title": "SimPEG Tipper Forward",
+    "inversion_type": "tipper",
     "geoh5": "",
     "forward_only": true,
     "topography_object": {
@@ -33,55 +33,31 @@
         "main": true,
         "group": "Data",
         "label": "Object",
-        "meshType": "{b99bd6e5-4fe1-45a5-bd2f-75fc31f91b38}",
+        "meshType": "{0b639533-f35b-44d8-92a8-f70ecff3fd26}",
         "value": ""
     },
-    "zxx_real_channel_bool": {
+    "txz_real_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Zxx real",
+        "label": "Use Txz real",
         "value": false
     },
-    "zxx_imag_channel_bool": {
+    "txz_imag_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Zxx imaginary",
+        "label": "Use Txz imaginary",
         "value": false
     },
-    "zxy_real_channel_bool": {
+    "tyz_real_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Zxy real",
+        "label": "Use Tyz real",
         "value": false
     },
-    "zxy_imag_channel_bool": {
+    "tyz_imag_channel_bool": {
         "group": "Data",
         "main": true,
-        "label": "Use Zxy imaginary",
-        "value": false
-    },
-    "zyx_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Use Zyx real",
-        "value": false
-    },
-    "zyx_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Use Zyx imaginary",
-        "value": false
-    },
-    "zyy_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Use Zyy real",
-        "value": false
-    },
-    "zyy_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Use Zyy imaginary",
+        "label": "Use Tyz imaginary",
         "value": false
     },
     "starting_model_object": {
@@ -353,7 +329,7 @@
     },
     "out_group": {
         "label": "Results group name",
-        "value": "MagnetotelluricsForward"
+        "value": "TipperForward"
     },
     "monitoring_directory": "",
     "workspace_geoh5": "",
