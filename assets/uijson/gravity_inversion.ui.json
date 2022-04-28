@@ -1,5 +1,5 @@
 {
-    "title": "SimPEG Gravity Inversion",
+    "title": "SimPEG gravity inversion",
     "inversion_type": "gravity",
     "geoh5": "",
     "forward_only": false,
@@ -7,8 +7,6 @@
         "main": true,
         "group": "Topography",
         "label": "Object",
-        "optional": true,
-        "enabled": false,
         "meshType": [
             "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
             "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
@@ -23,7 +21,9 @@
         "dataType": "Float",
         "group": "Topography",
         "main": true,
-        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "isValue": true,
         "label": "Elevation",
         "parent": "topography_object",
         "property": "",
@@ -354,6 +354,8 @@
             "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
             "{4ea87376-3ece-438b-bf12-3479733ded46}"
         ],
+        "optional": true,
+        "enabled": false,
         "label": "Object",
         "value": ""
     },
@@ -375,6 +377,7 @@
         "group": "Receivers location options",
         "label": "Number of tiles",
         "parent": "data_object",
+        "isValue": true,
         "property": "",
         "value": 1,
         "min": 1,
@@ -456,9 +459,9 @@
         "dependency": "detrend_order",
         "dependencyType": "enabled",
         "enabled": false,
+        "optional": true,
         "label": "Detrend type",
-        "value": "all",
-        "optional": true
+        "value": "all"
     },
     "max_chunk_size": {
         "min": 0,
@@ -479,7 +482,7 @@
         "optional": true,
         "enabled": false,
         "dependency": "mesh_from_params",
-        "dependencyType": "disable",
+        "dependencyType": "disabled",
         "label": "Mesh",
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
@@ -520,7 +523,7 @@
         "enabled": true,
         "dependency": "mesh",
         "dependencyType": "disabled",
-        "label": "Octree levels topography",
+        "label": "octree levels topography",
         "value": "0, 0, 4, 4"
     },
     "octree_levels_obs": {
@@ -529,7 +532,7 @@
         "enabled": true,
         "dependency": "mesh",
         "dependencyType": "disabled",
-        "label": "Octree levels observations",
+        "label": "octree levels observations",
         "value": "4, 4, 4, 4"
     },
     "depth_core": {
@@ -801,8 +804,9 @@
             "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
             "{4ea87376-3ece-438b-bf12-3479733ded46}"
         ],
-        "value": "",
-        "enabled": true
+        "optional": true,
+        "enabled": false,
+        "value": ""
     },
     "reference_model": {
         "association": [
@@ -811,11 +815,15 @@
         ],
         "dataType": "Float",
         "group": "Regularization",
-        "isValue": false,
+        "isValue": true,
         "parent": "reference_model_object",
+        "dependency": "reference_model_object",
+        "dependencyType": "enabled",
         "label": "Reference model value",
         "property": "",
-        "value": 0.0
+        "optional": true,
+        "value": 0.0,
+        "enabled": true
     },
     "gradient_type": {
         "choiceList": [
@@ -837,6 +845,8 @@
             "{4ea87376-3ece-438b-bf12-3479733ded46}"
         ],
         "label": "Lower bound object",
+        "optional": true,
+        "enabled": false,
         "value": ""
     },
     "lower_bound": {
@@ -846,11 +856,15 @@
         ],
         "dataType": "Float",
         "group": "Regularization",
-        "isValue": false,
+        "isValue": true,
         "parent": "lower_bound_object",
+        "dependency": "lower_bound_object",
+        "dependencyType": "enabled",
         "label": "Lower bound",
         "property": "",
-        "value": 0.0
+        "optional": true,
+        "value": 0.0,
+        "enabled": false
     },
     "upper_bound_object": {
         "group": "Regularization",
@@ -863,6 +877,8 @@
             "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
             "{4ea87376-3ece-438b-bf12-3479733ded46}"
         ],
+        "optional": true,
+        "enabled": false,
         "value": ""
     },
     "upper_bound": {
@@ -872,11 +888,14 @@
         ],
         "dataType": "Float",
         "group": "Regularization",
-        "isValue": false,
+        "isValue": true,
         "parent": "upper_bound_object",
+        "dependency": "lower_bound_object",
         "label": "Upper bound",
         "property": "",
-        "value": 0.0
+        "optional": true,
+        "value": 0.0,
+        "enabled": false
     },
     "parallelized": {
         "group": "Compute",
@@ -898,10 +917,9 @@
         "label": "Results group name",
         "value": "GravityInversion"
     },
-    "no_data_value": "",
     "monitoring_directory": "",
     "workspace_geoh5": "",
-    "run_command": "geoapps.drivers.grav_inversion",
+    "run_command": "geoapps.inversion.driver",
     "run_command_boolean": {
         "value": false,
         "label": "Run python module ",

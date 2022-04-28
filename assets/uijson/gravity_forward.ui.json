@@ -1,5 +1,5 @@
 {
-    "title": "SimPEG Gravity Forward",
+    "title": "SimPEG gravity Forward",
     "inversion_type": "gravity",
     "geoh5": "",
     "forward_only": true,
@@ -7,8 +7,6 @@
         "main": true,
         "group": "Topography",
         "label": "Object",
-        "optional": true,
-        "enabled": false,
         "meshType": [
             "{202C5DB1-A56D-4004-9CAD-BAAFD8899406}",
             "{6A057FDC-B355-11E3-95BE-FD84A7FFCB88}",
@@ -23,7 +21,9 @@
         "dataType": "Float",
         "group": "Topography",
         "main": true,
-        "isValue": false,
+        "optional": true,
+        "enabled": false,
+        "isValue": true,
         "label": "Elevation",
         "parent": "topography_object",
         "property": "",
@@ -114,6 +114,8 @@
             "{b020a277-90e2-4cd7-84d6-612ee3f25051}",
             "{4ea87376-3ece-438b-bf12-3479733ded46}"
         ],
+        "optional": true,
+        "enabled": false,
         "label": "Object",
         "value": ""
     },
@@ -125,7 +127,7 @@
         "dataType": "Float",
         "group": "Starting Model",
         "main": true,
-        "isValue": false,
+        "isValue": true,
         "parent": "starting_model_object",
         "label": "Density (g/cc)",
         "property": "",
@@ -135,6 +137,7 @@
         "group": "Receivers location options",
         "label": "Number of tiles",
         "parent": "data_object",
+        "isValue": true,
         "property": "",
         "value": 1,
         "min": 1,
@@ -210,7 +213,7 @@
         "optional": true,
         "enabled": false,
         "dependency": "mesh_from_params",
-        "dependencyType": "disable",
+        "dependencyType": "disabled",
         "label": "Mesh",
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
@@ -251,8 +254,8 @@
         "enabled": true,
         "dependency": "mesh",
         "dependencyType": "disabled",
-        "label": "Octree levels topography",
-        "value": "16, 8, 4, 2"
+        "label": "octree levels topography",
+        "value": "0, 0, 4, 4"
     },
     "octree_levels_obs": {
         "group": "Mesh",
@@ -260,7 +263,7 @@
         "enabled": true,
         "dependency": "mesh",
         "dependencyType": "disabled",
-        "label": "Octree levels observations",
+        "label": "octree levels observations",
         "value": "4, 4, 4, 4"
     },
     "depth_core": {
@@ -359,7 +362,7 @@
     },
     "monitoring_directory": "",
     "workspace_geoh5": "",
-    "run_command": "geoapps.drivers.grav_inversion",
+    "run_command": "geoapps.inversion.driver",
     "run_command_boolean": {
         "value": false,
         "label": "Run python module ",
