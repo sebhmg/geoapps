@@ -1,6 +1,6 @@
 {
-    "title": "SimPEG Tipper Forward",
-    "inversion_type": "tipper",
+    "title": "SimPEG Induced Polarization Forward",
+    "inversion_type": "induced polarization",
     "geoh5": "",
     "forward_only": true,
     "topography_object": {
@@ -37,18 +37,10 @@
         "main": true,
         "group": "Survey",
         "label": "Object",
-        "meshType": "{0b639533-f35b-44d8-92a8-f70ecff3fd26}",
+        "meshType": "{275ecee9-9c24-4378-bf94-65f3c5fbe163}",
         "value": ""
     },
-    "resolution": {
-        "min": 0.0,
-        "group": "Survey",
-        "main": true,
-        "optional": true,
-        "enabled": false,
-        "label": "Downsampling resolution",
-        "value": 0.0
-    },
+    "resolution": "",
     "z_from_topo": {
         "main": true,
         "group": "Survey",
@@ -98,30 +90,7 @@
         "value": 0.0
     },
     "gps_receivers_offset": "",
-    "txz_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Txz real",
-        "value": false
-    },
-    "txz_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Txz imaginary",
-        "value": false
-    },
-    "tyz_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Tyz real",
-        "value": false
-    },
-    "tyz_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Tyz imaginary",
-        "value": false
-    },
+    "chargeability_channel_bool": true,
     "mesh": {
         "group": "Mesh and Models",
         "main": true,
@@ -131,7 +100,7 @@
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
     },
-    "background_conductivity": {
+    "conductivity_model": {
         "association": [
             "Cell",
             "Vertex"
@@ -141,7 +110,7 @@
         "main": true,
         "isValue": true,
         "parent": "mesh",
-        "label": "Background Conductivity (Siemens/m)",
+        "label": "Conductivity (Siemens/m)",
         "property": "",
         "value": 0.001
     },
@@ -155,9 +124,9 @@
         "main": true,
         "isValue": true,
         "parent": "mesh",
-        "label": "Initial Conductivity (Siemens/m)",
+        "label": "Initial Chargeability (V/V)",
         "property": "",
-        "value": 0.001
+        "value": 0.0
     },
     "output_tile_files": false,
     "window_center_x": {
@@ -235,7 +204,7 @@
     },
     "out_group": {
         "label": "Results group name",
-        "value": "TipperForward"
+        "value": "InducedPolarizationForward"
     },
     "monitoring_directory": "",
     "workspace_geoh5": "",
