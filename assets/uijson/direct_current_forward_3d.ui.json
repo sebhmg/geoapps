@@ -1,6 +1,8 @@
 {
-    "title": "SimPEG Tipper Forward",
-    "inversion_type": "tipper",
+    "title": "SimPEG Direct Current Forward",
+    "documentation": "https://geoapps.readthedocs.io/en/stable/content/applications/dcip_inversion.html",
+    "icon": "PotentialElectrode",
+    "inversion_type": "direct current",
     "geoh5": "",
     "forward_only": true,
     "topography_object": {
@@ -37,39 +39,16 @@
         "main": true,
         "group": "Survey",
         "label": "Object",
-        "meshType": "{0b639533-f35b-44d8-92a8-f70ecff3fd26}",
+        "meshType": "{275ecee9-9c24-4378-bf94-65f3c5fbe163}",
         "value": ""
     },
-    "resolution": {
-        "min": 0.0,
-        "group": "Survey",
-        "main": true,
-        "optional": true,
-        "enabled": false,
-        "label": "Downsampling resolution",
-        "value": 0.0
-    },
+    "resolution": "",
     "z_from_topo": {
         "main": true,
         "group": "Survey",
         "label": "Take z from topography",
         "tooltip": "Sets survey elevation to topography before any offsets are applied.",
         "value": false
-    },
-    "receivers_radar_drape": {
-        "association": [
-            "Cell",
-            "Vertex"
-        ],
-        "dataType": "Float",
-        "main": true,
-        "group": "Survey",
-        "label": "Z radar offset",
-        "tooltip": "Apply a non-homogeneous offset to survey object from radar channel.",
-        "optional": true,
-        "parent": "data_object",
-        "value": "",
-        "enabled": false
     },
     "receivers_offset_x": {
         "group": "Survey",
@@ -97,31 +76,23 @@
         "enabled": false,
         "value": 0.0
     },
+    "receivers_radar_drape": {
+        "association": [
+            "Cell",
+            "Vertex"
+        ],
+        "dataType": "Float",
+        "main": true,
+        "group": "Survey",
+        "label": "Z radar offset",
+        "tooltip": "Apply a non-homogeneous offset to survey object from radar channel.",
+        "optional": true,
+        "parent": "data_object",
+        "value": "",
+        "enabled": false
+    },
     "gps_receivers_offset": "",
-    "txz_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Txz real",
-        "value": false
-    },
-    "txz_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Txz imaginary",
-        "value": false
-    },
-    "tyz_real_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Tyz real",
-        "value": false
-    },
-    "tyz_imag_channel_bool": {
-        "group": "Data",
-        "main": true,
-        "label": "Tyz imaginary",
-        "value": false
-    },
+    "potential_channel_bool": true,
     "mesh": {
         "group": "Mesh and Models",
         "main": true,
@@ -131,27 +102,13 @@
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
     },
-    "background_conductivity": {
-        "association": [
-            "Cell",
-            "Vertex"
-        ],
-        "dataType": "Float",
-        "group": "Mesh and Models",
-        "main": true,
-        "isValue": true,
-        "parent": "mesh",
-        "label": "Background Conductivity (Siemens/m)",
-        "property": "",
-        "value": 0.001
-    },
     "starting_model": {
         "association": [
             "Cell",
             "Vertex"
         ],
         "dataType": "Float",
-        "group": "Mesh and Models",
+        "group": "Mesh and Models`",
         "main": true,
         "isValue": true,
         "parent": "mesh",
@@ -235,7 +192,7 @@
     },
     "out_group": {
         "label": "Results group name",
-        "value": "TipperForward"
+        "value": "DirectCurrentForward"
     },
     "monitoring_directory": "",
     "workspace_geoh5": "",
