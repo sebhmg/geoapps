@@ -119,8 +119,6 @@
     "mesh": {
         "group": "Mesh and Models",
         "main": true,
-        "optional": true,
-        "enabled": false,
         "label": "Mesh",
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
@@ -274,7 +272,7 @@
     "coolingRate": {
         "group": "Optimization",
         "label": "Iterations per beta",
-        "value": 3,
+        "value": 2,
         "min": 1
     },
     "coolingFactor": {
@@ -290,7 +288,7 @@
         "group": "Optimization",
         "label": "Maximum iterations",
         "tooltip": "Number of L2 and IRLS iterations combined",
-        "value": 100,
+        "value": 50,
         "enabled": true
     },
     "max_line_search_iterations": {
