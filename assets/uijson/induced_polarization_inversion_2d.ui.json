@@ -336,7 +336,7 @@
     "coolingRate": {
         "group": "Optimization",
         "label": "Iterations per beta",
-        "value": 3,
+        "value": 2,
         "min": 1
     },
     "coolingFactor": {
@@ -352,7 +352,7 @@
         "group": "Optimization",
         "label": "Maximum iterations",
         "tooltip": "Number of L2 and IRLS iterations combined",
-        "value": 100,
+        "value": 50,
         "enabled": true
     },
     "max_line_search_iterations": {

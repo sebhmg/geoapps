@@ -96,8 +96,6 @@
     "mesh": {
         "group": "Mesh and Models",
         "main": true,
-        "optional": true,
-        "enabled": false,
         "label": "Mesh",
         "meshType": "{4ea87376-3ece-438b-bf12-3479733ded46}",
         "value": ""
