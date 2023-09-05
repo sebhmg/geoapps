@@ -3,6 +3,7 @@ name = "geoapps"
 version = "0.10.0"
 description = "Open-sourced Applications in Geoscience"
 authors = ["Mira Geoscience <dominiquef@mirageoscience.com>"]
+license = "MIT"
 repository = "https://github.com/MiraGeoscience/geoapps"
 documentation = "https://geoapps.readthedocs.io/en/latest/"
 homepage = "https://mirageoscience.com"
