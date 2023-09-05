@@ -147,7 +147,7 @@ class LockFilePatcher:
 
     def patch_none_hash(self) -> None:
         """
-        Patch the lock file to remove --hash=md5:None and #sha25=None
+        Patch the lock file to remove --hash=md5:None and #sha256=None
 
         - pip does not want hash with md5 (but accepts sha256 or others).
         - #sha256=None will conflict with the actual sha256
